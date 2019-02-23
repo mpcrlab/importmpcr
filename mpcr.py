@@ -23,6 +23,10 @@ import functools
 from torch.optim import lr_scheduler
 
 
+def setup():
+  import numpy as np
+
+
 def plot(x):
   fig, ax = plt.subplots()
   im = ax.imshow(x)
