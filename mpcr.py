@@ -26,6 +26,9 @@ from torch.optim import lr_scheduler
 def setup():
   import numpy as np
 
+def test():
+  print("Here")
+  
 
 def plot(x):
   fig, ax = plt.subplots()
