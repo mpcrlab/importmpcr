@@ -8,7 +8,6 @@ from astropy.io import fits
 from os import listdir
 from os.path import join
 from PIL import Image
-from __future__ import print_function
 import argparse
 from math import log10
 import torch
