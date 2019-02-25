@@ -100,7 +100,7 @@ def save_img(image_tensor, filename):
 
 class CGAN_DatasetFromFolder(data.Dataset):
     def __init__(self, image_dir, direction):
-        super(DatasetFromFolder, self).__init__()
+        super(CGAN_DatasetFromFolder, self).__init__()
         self.direction = direction
         self.a_path = join(image_dir, "a")
         self.b_path = join(image_dir, "b")
