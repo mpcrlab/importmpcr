@@ -152,22 +152,7 @@ def get_test_set(root_dir, direction):
 
     return CGAN_DatasetFromFolder(test_dir, direction)
 
-from __future__ import print_function
-import argparse
-import os
-from math import log10
 
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader
-import torch.backends.cudnn as cudnn
-
-import torch
-import torch.nn as nn
-from torch.nn import init
-import functools
-from torch.optim import lr_scheduler
 
 def get_norm_layer(norm_type='instance'):
     if norm_type == 'batch':
