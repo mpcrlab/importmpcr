@@ -209,7 +209,9 @@ def get_norm_layer(norm_type='instance'):
     return norm_layer
 
 
-def get_scheduler(optimizer,lr_policy == 'lambda'):
+def get_scheduler(optimizer):
+  lr_policy == 'lambda'
+  
     if lr_policy == 'lambda':
         def lambda_rule(epoch):
             lr_l = 1.0 - max(0, epoch + epoch_count - niter) / float(niter_decay + 1)
