@@ -210,7 +210,7 @@ def get_norm_layer(norm_type='instance'):
 
 
 def get_scheduler(optimizer):
-  lr_policy == 'lambda'
+  
   
     if lr_policy == 'lambda':
         def lambda_rule(epoch):
