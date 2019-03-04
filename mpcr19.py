@@ -104,6 +104,7 @@ def get_images_web(s1,s2):
 
   split_train_test(source,dest)  
 
+  load_data(data_dir)  
     
 
 def plot(x):
