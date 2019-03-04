@@ -106,7 +106,7 @@ def get_images_web(s1,s2):
 
   dataloaders,dataset_sizes,class_names,device = load_data(data_dir)  
   
-  return dataloaders,dataset_sizes,class_names,device  
+  return dataloaders,class_names,dataset_sizes,device  
 
 def plot(x):
     fig, ax = plt.subplots()
@@ -167,7 +167,7 @@ def imshow(inp, title=None):
     
     
     
-def train_model(model, criterion, optimizer, scheduler, num_epochs=25):
+def train_model(model, criterion, optimizer, scheduler, num_epochs=25, dataloaders,class_names,dataset_sizes,device):
     since = time.time()
 
     best_model_wts = copy.deepcopy(model.state_dict())
@@ -234,7 +234,7 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=25):
     model.load_state_dict(best_model_wts)
     return model    
     
-def train_network():
+def train_network(dataloaders,class_names,dataset_sizes,device):
   
   model_ft = models.resnet18(pretrained=True)
 
@@ -250,7 +250,7 @@ def train_network():
   # Decay LR by a factor of 0.1 every 7 epochs
   exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
   
-  model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=25)
+  model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=25, dataloaders,class_names,dataset_sizes,device)
   
   return model_ft
 
@@ -283,7 +283,7 @@ def show_output(model, num_images=16):
         
         
         
-def show_batch(dataloaders):
+def show_batch(dataloaders,class_names):
 
   inputs, classes = next(iter(dataloaders['Train']))# Get a batch of training data
   imshow(torchvision.utils.make_grid(inputs), title=[class_names[x] for x in classes])        
