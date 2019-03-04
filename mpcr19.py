@@ -135,7 +135,7 @@ def load_data(data_dir):
 
 
   image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x]) for x in ['Train', 'Test']}
-  dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=4, shuffle=True, num_workers=4) for x in ['Train', 'Test']}
+  dataloaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=16, shuffle=True, num_workers=4) for x in ['Train', 'Test']}
   dataset_sizes = {x: len(image_datasets[x]) for x in ['Train', 'Test']}
   class_names = image_datasets['Train'].classes
   device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
