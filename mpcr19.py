@@ -279,3 +279,10 @@ def visualize_model(model, num_images=16):
                     model.train(mode=was_training)
                     return
         model.train(mode=was_training)
+        
+        
+        
+def show_batch():
+
+  inputs, classes = next(iter(dataloaders['Train']))# Get a batch of training data
+  imshow(torchvision.utils.make_grid(inputs), title=[class_names[x] for x in classes])        
