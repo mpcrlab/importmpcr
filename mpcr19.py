@@ -290,7 +290,7 @@ def show_batch(dataloaders,class_names):
   imshow(torchvision.utils.make_grid(inputs), title=[class_names[x] for x in classes])
     
     
-def save_model(model):
+def save_model(model,s1,s2):
   
   torch.save(model.state_dict(), '/content/Data/'+s1+" "+s2 + ".mpcr")
     
