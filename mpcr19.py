@@ -24,6 +24,7 @@ import matplotlib.pyplot as plt
 import time
 import os
 import copy
+from torchsummary import summary
 import warnings
 warnings.filterwarnings("ignore")
 
