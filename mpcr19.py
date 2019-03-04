@@ -287,4 +287,24 @@ def show_output(model, dataloaders, class_names, device, num_images=16):
 def show_batch(dataloaders,class_names):
 
   inputs, classes = next(iter(dataloaders['Train']))# Get a batch of training data
-  imshow(torchvision.utils.make_grid(inputs), title=[class_names[x] for x in classes])        
+  imshow(torchvision.utils.make_grid(inputs), title=[class_names[x] for x in classes])
+    
+    
+def save_model(model):
+  
+  torch.save(model.state_dict(), '/content/Data/'+s1+" "+s2 + ".mpcr")
+    
+    
+def load_model(model_name):
+  
+  model = models.resnet18(pretrained=True)
+
+  model.fc = nn.Linear(model.fc.in_features, 2)
+
+  model = model.to(device)
+  
+  model.load_state_dict(torch.load(model_name))
+  
+  model.eval()
+  
+  return model
