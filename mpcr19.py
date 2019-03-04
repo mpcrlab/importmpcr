@@ -1,3 +1,5 @@
+from __future__ import print_function, division
+
 name='google_images_download'
 
 import subprocess
@@ -7,12 +9,10 @@ def install(name):
 
 install(name)
 
-
 from google_images_download import google_images_download
 import shutil
 import os
 import cv2
-from __future__ import print_function, division
 import torch
 import torch.nn as nn
 import torch.optim as optim
