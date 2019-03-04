@@ -104,8 +104,9 @@ def get_images_web(s1,s2):
 
   split_train_test(source,dest)  
 
-  load_data(data_dir)  
-    
+  dataloaders,dataset_sizes,class_names,device = load_data(data_dir)  
+  
+  return dataloaders,dataset_sizes,class_names,device  
 
 def plot(x):
     fig, ax = plt.subplots()
@@ -282,7 +283,7 @@ def show_output(model, num_images=16):
         
         
         
-def show_batch():
+def show_batch(dataloaders):
 
   inputs, classes = next(iter(dataloaders['Train']))# Get a batch of training data
   imshow(torchvision.utils.make_grid(inputs), title=[class_names[x] for x in classes])        
