@@ -25,6 +25,7 @@ import matplotlib.pyplot as plt
 import time
 import os
 import copy
+from PIL import Image
 from torchsummary import summary
 import warnings
 
