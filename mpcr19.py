@@ -36,7 +36,7 @@ data_dir = '/content/Data/'
 
 
 
-def clean_folders():
+def clean_folders(s1,s2):
   
   
   folder = '/content/Data/Train/'+s1
@@ -97,7 +97,7 @@ def get_images_web(s1,s2):
   
   paths = response.download(arguments)   #passing the arguments to the function
     
-  clean_folders()
+  clean_folders(s1,s2)
 
   source = '/content/Data/Train'
   dest = '/content/Data/Test'
