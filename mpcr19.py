@@ -255,7 +255,7 @@ def train_network(dataloaders,class_names,dataset_sizes,device):
   return model_ft
 
 
-def show_output(model, num_images=16):
+def show_output(model, dataloaders, class_names, device, num_images=16):
     was_training = model.training
     model.eval()
     images_so_far = 0
