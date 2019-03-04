@@ -254,7 +254,7 @@ def train_network():
   return model_ft
 
 
-def visualize_model(model, num_images=16):
+def show_output(model, num_images=16):
     was_training = model.training
     model.eval()
     images_so_far = 0
