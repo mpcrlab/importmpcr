@@ -167,7 +167,7 @@ def imshow(inp, title=None):
     
     
     
-def train_model(model, criterion, optimizer, scheduler, num_epochs=25, dataloaders,class_names,dataset_sizes,device):
+def train_model(dataloaders,class_names,dataset_sizes,device, model, criterion, optimizer, scheduler, num_epochs=25):
     since = time.time()
 
     best_model_wts = copy.deepcopy(model.state_dict())
