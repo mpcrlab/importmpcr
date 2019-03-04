@@ -301,7 +301,7 @@ def load_model(model_name):
 
   model.fc = nn.Linear(model.fc.in_features, 2)
 
-  model = model.to(device)
+  model = model.to(device=torch.device('cuda:0'))
   
   model.load_state_dict(torch.load(model_name))
   
