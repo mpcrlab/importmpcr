@@ -91,7 +91,7 @@ def get_images_web(s1,s2):
   os.mkdir('Train')
   os.mkdir('Test')
   
-  arguments = {"keywords":s1 +","+ s2,"limit":100,"print_urls":False,"output_directory":'/content/Data/Train',"--safe_search"}   #creating list of arguments
+  arguments = {"keywords":s1 +","+ s2,"limit":100,"print_urls":False,"output_directory":'/content/Data/Train',"safe_search"}   #creating list of arguments
 
   response = google_images_download.googleimagesdownload()
   
