@@ -30,6 +30,14 @@ from PIL import Image
 from torchsummary import summary
 from IPython.core.display import display, HTML
 
+import tensorflow as tf
+import scipy.io
+from scipy.cluster.vq import whiten
+from sklearn.preprocessing import scale
+import h5py
+from skimage import io
+import tflearn
+import tflearn.datasets.mnist as mnist
 
 
 import warnings
