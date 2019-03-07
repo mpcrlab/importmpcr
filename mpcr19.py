@@ -45,6 +45,8 @@ from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.normalization import local_response_normalization
 from tflearn.layers.estimator import regression
 
+import tflearn.datasets.oxflower17 as oxflower17
+
 import warnings
 warnings.filterwarnings("ignore")
 
