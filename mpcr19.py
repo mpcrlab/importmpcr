@@ -39,6 +39,17 @@ from skimage import io
 import tflearn
 import tflearn.datasets.mnist as mnist
 import tensorflow as tf
+from skimage import io as io
+
+
+
+from scipy import signal
+from skimage.util import view_as_blocks, view_as_windows
+from skimage.transform import rescale, resize
+
+
+
+
 
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.conv import conv_2d, max_pool_2d
@@ -143,7 +154,7 @@ def plot(x):
     fig, ax = plt.subplots()
     im = ax.imshow(x, cmap = 'gray')
     ax.axis('off')
-    fig.set_size_inches(18, 10)
+    fig.set_size_inches(10, 10)
     plt.show()        
         
 
