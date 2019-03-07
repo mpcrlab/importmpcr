@@ -38,7 +38,7 @@ import h5py
 from skimage import io
 import tflearn
 import tflearn.datasets.mnist as mnist
-
+import tensorflow as tf
 
 import warnings
 warnings.filterwarnings("ignore")
