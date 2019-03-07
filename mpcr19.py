@@ -382,6 +382,26 @@ def montage(X):
             image_id += 1
     return M
 
+def montage2(X):    
+    m, n, count = np.shape(X)    
+    mm = int(np.ceil(np.sqrt(count)))
+    nn = mm
+    M = np.zeros((mm * m, nn * n))
+
+    image_id = 0
+    for j in range(mm):
+        for k in range(nn):
+            if image_id >= count: 
+                break
+            sliceM, sliceN = j * m, k * n
+            M[sliceN:sliceN + n, sliceM:sliceM + m] = np.transpose(X[:, :, image_id])
+            image_id += 1
+    return M
+
+def tensor_montage_plot(data):
+    P=np.dstack((montage2(np.transpose(data[:,:,:,0])),montage2(np.transpose(data[:,:,:,1])),montage2(np.transpose(data[:,:,:,2]))))
+    return P
+
 
 def mat2ten(X):
     zs=[int(np.sqrt(X.shape[0])),int(np.sqrt(X.shape[0])),X.shape[1]]
