@@ -28,8 +28,11 @@ import os
 import copy
 from PIL import Image
 from torchsummary import summary
-import warnings
+from IPython.core.display import display, HTML
 
+
+
+import warnings
 warnings.filterwarnings("ignore")
 
 
@@ -68,7 +71,15 @@ def clean_folders(s1,s2):
 
       os.remove(f)
     
+heads = 'https://random-ize.com/coin-flip/us-quarter/us-quarter-front.jpg'
+
+tails = 'https://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg'    
     
+def show_img(img):
+  
+  display(HTML('<img src=' + img + '>'))
+  
+
     
 def split_train_test(source,dest):
 
