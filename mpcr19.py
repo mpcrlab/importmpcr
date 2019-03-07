@@ -21,6 +21,9 @@ import torch.optim as optim
 from torch.optim import lr_scheduler
 import numpy as np
 import torchvision
+from torch import tensor 
+from torch.autograd import Variable
+from torch import randn
 from torchvision import datasets, models, transforms
 import matplotlib.pyplot as plt
 import time
@@ -46,6 +49,17 @@ from skimage import io as io
 from scipy import signal
 from skimage.util import view_as_blocks, view_as_windows
 from skimage.transform import rescale, resize
+
+
+import plotly.plotly as py
+import plotly.graph_objs as go
+from matplotlib import pylab
+from numpy import arange,array,ones
+from scipy import stats
+import numpy as np
+
+
+
 
 
 
