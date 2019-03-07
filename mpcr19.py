@@ -363,3 +363,29 @@ def load_model(model_name):
   model.eval()
   
   return model
+
+
+
+def montage(X):    
+    m, n, count = np.shape(X)    
+    mm = int(np.ceil(np.sqrt(count)))
+    nn = mm
+    M = np.zeros((mm * m, nn * n))
+
+    image_id = 0
+    for j in range(mm):
+        for k in range(nn):
+            if image_id >= count: 
+                break
+            sliceM, sliceN = j * m, k * n
+            M[sliceN:sliceN + n, sliceM:sliceM + m] = X[:, :, image_id]
+            image_id += 1
+    return M
+
+
+def mat2ten(X):
+    zs=[int(np.sqrt(X.shape[0])),int(np.sqrt(X.shape[0])),X.shape[1]]
+    Z=np.zeros(zs)
+    for i in range(X.shape[1]):
+        Z[:,:,i]=np.reshape(X[:,i],[zs[0],zs[1]])
+    return Z
