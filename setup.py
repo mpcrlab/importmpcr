@@ -12,6 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/mpcrlab/importmpcr",
+    install_requires=['google_images_download'],
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
