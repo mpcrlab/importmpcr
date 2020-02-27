@@ -10,4 +10,4 @@ def take(gen,count):
 
 @make_infix('mod','pow','rshift','mul')
 def to(start,end):
-    return list(range(start,end))
+    return list(range(start,end+1))
