@@ -9,5 +9,5 @@ def take(gen,count):
     return [next(gen) for _ in range(count)]
 
 @make_infix('mod','pow','rshift','mul')
-def to(start,end):
-    return list(range(start,end+1))
+def of(func,list):
+    return [func(i) for i in list]
